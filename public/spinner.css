@@ -1,0 +1,50 @@
+ 
+/* Style du spinner */
+.spinner {
+    display: none; /* Caché par défaut */
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #007BFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animation de rotation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+ 
+/* Spinner */
+.spinner {
+    display: none;
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #007BFF;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Message d'attente */
+#loading-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007BFF;
+    opacity: 0; /* Caché par défaut */
+    margin-top: 10px;
+}
+
+/* Classe cachée */
+.hidden {
+    display: none;
+}

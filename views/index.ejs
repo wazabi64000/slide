@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="spinner.css">
+    <title>Générateur de Présentations</title>
+</head>
+<body>
+    <h1>Créer une présentation</h1>
+
+    <!-- Formulaire de génération de présentation -->
+    <form action="/generate-summary" method="POST" onsubmit="showLoading()">
+        <textarea rows="12" type="text" name="prompt" id="voiceInput" placeholder="Sujet de la présentation" required></textarea>
+        <br><br>
+        
+    
+        
+        <br><br>
+        <button type="submit">Générer</button>
+
+        <!-- Spinner -->
+        <div id="loading-spinner" class="spinner"></div>
+        <!-- Message animé -->
+        <p id="loading-text" class="hidden">Génération en cours...</p>
+    </form>
+
+
+    <!-- Inclusion de Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+ </body>
+</html>

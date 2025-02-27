@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Sommaire généré</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link" href="./index.ejs">Accueil</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>Présentation générée pour "<%= prompt %>"</h1>
+
+    <% if (typeof slides !== "undefined" && slides.length > 0) { %>
+        <form action="/generate-ppt" method="POST">
+            <% slides.forEach((slide, index) => { %>
+                <div class="slide-container" style="background-color: <%= index % 2 === 0 ? '#f0f8ff' : '#f9f9f9' %>; padding: 20px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <input type="hidden" name="titles[]" value="<%= slide.title %>">
+                    <input type="hidden" name="texts[]" value="<%= slide.text %>">
+                    <input type="hidden" name="images[]" value="<%= slide.image %>">
+                    
+                    <!-- Titre de la diapositive -->
+                    <h2 class="slide-title"><%= slide.title %></h2>
+                    
+                    <!-- Texte de la diapositive -->
+                    <p class="slide-text"><%= slide.text %></p>
+
+                    <!-- Image de la diapositive -->
+                    <% if (slide.image) { %>
+                        <img src="<%= slide.image %>" alt="Image" class="slide-image" width="300">
+                    <% } %>
+                </div>
+            <% }); %>
+
+            <button type="submit" class="download-btn">Télécharger le PPTX</button>
+        </form>
+    <% } else { %>
+        <p>Aucun contenu généré. Essayez un autre sujet.</p>
+    <% } %>
+
+    <script src="script.js"></script>
+</body>
+</html>
