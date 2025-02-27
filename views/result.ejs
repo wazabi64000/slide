@@ -20,8 +20,8 @@
         <form action="/generate-ppt" method="POST">
             <% slides.forEach((slide, index) => { %>
                 <div class="slide-container" style="background-color: <%= index % 2 === 0 ? '#f0f8ff' : '#f9f9f9' %>; padding: 20px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-                    <input type="hidden" name="titles[]" value="<%= slide.title %>">
-                    <input type="hidden" name="texts[]" value="<%= slide.text %>">
+                    <input type="hidden" value="<%= slide.title %>">
+                    <input type="hidden" value="<%= slide.text %>">
                     <input type="hidden" name="images[]" value="<%= slide.image %>">
                     
                     <!-- Titre de la diapositive -->
